@@ -109,6 +109,16 @@ function printQuote() {
   document.getElementById('quote-box').innerHTML = displayQuote;
 }
 
+function changeBackgroundColor() {
+  let red = Math.floor(Math.random() * 256);
+  let green = Math.floor(Math.random() * 256);
+  let red = Math.floor(Math.random() * 256);
+
+  let rgbColor = `rgb(${red}, ${green}, ${blue})`;
+
+  document.body.style.backgroundColor = rgbColor;
+}
+
 /***
  * click event listener for the print quote button
  * DO NOT CHANGE THE CODE BELOW!!
