@@ -111,7 +111,7 @@ function printQuote() {
 
   // check for tags and display them, if available
   if (quote.tags !== undefined) {
-    let tags = `tags: ${quote.tags.join(', ')}`;
+    let tags = `Tags: ${quote.tags.join(', ')}`;
     displayQuote += `<span class="year">${tags}</span>`;
   }
 
