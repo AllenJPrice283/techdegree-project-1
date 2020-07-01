@@ -99,6 +99,11 @@ function printQuote() {
     displayQuote += `<span class="year">${quote.year}</span>`;
   }
 
+  if (quote.tags !== undefined) {
+    let tags = `${quote.tags.join(', ')}`;
+    displayQuote += `<span class="year">${tags}</span>`;
+  }
+
   displayQuote += '</p>';
 
   document.getElementById('quote-box').innerHTML = displayQuote;
