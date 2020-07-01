@@ -121,6 +121,8 @@ function changeBackgroundColor() {
   document.body.style.backgroundColor = rgbColor;
 }
 
+setInterval(printQuote, 12000);
+
 /***
  * click event listener for the print quote button
  * DO NOT CHANGE THE CODE BELOW!!
