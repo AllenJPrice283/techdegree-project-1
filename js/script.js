@@ -107,6 +107,8 @@ function printQuote() {
   displayQuote += '</p>';
 
   document.getElementById('quote-box').innerHTML = displayQuote;
+
+  changeBackgroundColor();
 }
 
 function changeBackgroundColor() {
