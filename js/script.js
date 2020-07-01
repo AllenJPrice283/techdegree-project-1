@@ -8,7 +8,8 @@ project 1 - A Random Quote Generator
   // Reach out in your Slack community - https://treehouse-fsjs-102.slack.com/app_redirect?channel=chit-chat
 
 /*** 
- * `quotes` array 
+ * quotes array
+ * An array of objects containing a total of eleven quotes
 ***/
 
 const quotes = [
@@ -73,7 +74,8 @@ const quotes = [
 ];
 
 /***
- * `getRandomQuote` function
+ * getRandomQuote function
+ * Retrieves a random quote from the quotes array
 ***/
 
 function getRandomQuote() {
@@ -83,22 +85,31 @@ function getRandomQuote() {
 }
 
 /***
- * `printQuote` function
+ * printQuote function
+ * Displays a random quote and changes
+ * the background color of the body
 ***/
 
 function printQuote() {
+
+  // retrieve a random quote
   let quote = getRandomQuote();
+
+  // display the quote and the source
   let displayQuote = `<p class="quote">${quote.quote}</p>
                       <p class="source">${quote.source}`;
   
+  // check for the citation and display it, if available
   if (quote.citation !== undefined) {
     displayQuote += `<span class="citation">${quote.citation}</span>`;
   }
 
+  // check for the year and display it, if available
   if (quote.year !== undefined) {
     displayQuote += `<span class="year">${quote.year}</span>`;
   }
 
+  // check for tags and display them, if available
   if (quote.tags !== undefined) {
     let tags = `${quote.tags.join(', ')}`;
     displayQuote += `<span class="year">${tags}</span>`;
@@ -106,21 +117,32 @@ function printQuote() {
 
   displayQuote += '</p>';
 
+  // display the final quote to the page
   document.getElementById('quote-box').innerHTML = displayQuote;
 
+  // change the background color
   changeBackgroundColor();
 }
+
+// printQuote helper function
+
+/***
+ * changeBackgroundColor function
+ * Chooses a random RGB color and sets
+ * it as the background color of the body
+ ***/
 
 function changeBackgroundColor() {
   let red = Math.floor(Math.random() * 256);
   let green = Math.floor(Math.random() * 256);
-  let red = Math.floor(Math.random() * 256);
+  let blue = Math.floor(Math.random() * 256);
 
   let rgbColor = `rgb(${red}, ${green}, ${blue})`;
 
   document.body.style.backgroundColor = rgbColor;
 }
 
+// Automatically refresh quotes every twelve seconds
 setInterval(printQuote, 12000);
 
 /***
