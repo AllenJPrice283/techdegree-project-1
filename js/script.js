@@ -7,6 +7,13 @@ project 1 - A Random Quote Generator
   // Check the "Project Resources" section of the project instructions
   // Reach out in your Slack community - https://treehouse-fsjs-102.slack.com/app_redirect?channel=chit-chat
 
+/***
+ * This Random Quote Generator is a simple application that
+ * generates a random famous quote every twelve seconds or at
+ * any time the "Show another quote" button is pressed.
+***/
+
+
 /*** 
  * quotes array
  * An array of objects containing a total of eleven quotes
@@ -91,8 +98,6 @@ function getRandomQuote() {
 ***/
 
 function printQuote() {
-
-  // retrieve a random quote
   let quote = getRandomQuote();
 
   // display the quote and the source
@@ -120,7 +125,6 @@ function printQuote() {
   // display the final quote to the page
   document.getElementById('quote-box').innerHTML = displayQuote;
 
-  // change the background color
   changeBackgroundColor();
 }
 
